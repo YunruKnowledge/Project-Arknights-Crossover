@@ -10,7 +10,6 @@ const api_server = "https://eu-central-1.aws.data.mongodb-api.com/app/data-qysgs
 
 router.get("/character/:query", async (req,res)=>{
 
-    const collection = "character"
     const lookUp = {
         "name": 1,
         "description": 1,
@@ -21,13 +20,19 @@ router.get("/character/:query", async (req,res)=>{
         "star": 1,
         "icon": 1
     }
-    const query = req.params.query
+    const query = {
+        "name": {
+            // May disable regex later
+            "$regex": req.params.query,
+            "$options": "i"
+        }
+    }
     
     try {
-        const wano = await fetchData(collection, query, lookUp);
         // console.log(wano)
         res.render('index', {
-          data: wano
+          fav: await fetchData("other", null, {"favicon": 1}),
+          character: await fetchData("character", query, lookUp)
         });
     } 
     catch (error) {
@@ -51,13 +56,7 @@ async function fetchData(collection, query, lookFor) {
             "database": "arknights_crossover",
             "dataSource": "API-Cluster",
             "projection": lookFor,
-            "filter": {
-                "name": {
-                    // May disable regex later
-                    "$regex": query,
-                    "$options": "i"
-                }
-            },
+            "filter": query,
             "limit": 4
         }
     };
