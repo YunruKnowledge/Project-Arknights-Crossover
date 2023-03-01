@@ -3,4 +3,9 @@
   margin: 0;
 }
 
+body {
+  background-image: url(/img/back_g.jpg);
+  background-size: cover;
+}
+
 /*# sourceMappingURL=index.css.map */
