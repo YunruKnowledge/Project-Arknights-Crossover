@@ -15,7 +15,35 @@ body
     color: white
     font-family: 'Noto Sans JP', sans-serif
     font-size: 1rem
-    padding-top: 4rem
+
+nav
+    display: flex
+    justify-content: space-between
+    margin-top: 1vw
+    padding: 0 1vw
+
+    font-size: 24px
+    letter-spacing: 0.1em
+    >span
+        display: flex
+        align-items: center
+    .current
+        display: flex
+        align-items: stretch
+        span
+            display: flex
+            align-items: center
+        img
+            margin: auto
+            height: 24px
+    .logo
+        height: 4rem
+    hr
+        margin: auto
+        width: 20vw
+        border: 0
+        background-color: white
+        height: 1px
 
 .content_wrap
     display: flex
@@ -43,30 +71,51 @@ body
     flex-direction: column
 
 .left_panel
+    position: relative
     transform: skewY(1deg)
     .class
         display: flex
+        align-items: stretch
         width: max-content
         background-color: black
         border: 2px solid white
-        align-items: center
+        position: relative
         img
             width: 64px
             display: block
             border-right: 2px solid white
         span
-            font-size: 36px
+            display: flex
+            align-items: center
+            font-size: 32px
+            letter-spacing: 0.1em
             background-color: black
             padding: 0 0.5em
             padding-bottom: 0.15em
             text-transform: uppercase
+            border-right: 2px solid white
+            &:last-of-type
+                background-color: white
+                color: black
+                height: auto
+                border-right: 0
+    .faction
+        border: 0
+        width: 256px
+        position: absolute
+        z-index: 0
+        right: 0
+        opacity: 0.25
+        transform: translateY(-25%)
     .stars
+        position: relative
         display: flex
         span
             font-size: 28px
             rotate: 15deg
             display: block
     .desc, .special
+        position: relative
         margin-top: 1.25em
         
 .right_panel

@@ -9,13 +9,31 @@
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
+    <nav>
+        <div class="current">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAYCAYAAAAMAljuAAABb2lDQ1BpY2MAACiRdZE9S8NQFIafpoqiFQcdRBw61I+hBVEQR6mgS3VoK1h1adO0FdIakhQRV8HFoeAguvg1+A90FVwVBEERRNzc/VqkxHNboSJ6w815eO99DydvQIuZetFpmoBiybXj09HgfGoh2PKMH40uIgymdceaSUwl+Xd93OJT9Saiev1/78/VnjUcHXytwmO6ZbvCMg2xVddSvCXcrRfSWeED4bAtAwpfKj1T5yfF+Tq/KbaT8UnQVM9g/gdnfrBesIvCQ8KholnWv+dRXxIwSnMJqb2y+3CIM02UIBnKLGPiSi7LlCSzv33DNd8sK+LR5W2xhi2OPAXxhkUtS1dDak50Qx6TNZX77zyd3OhIvXsgCs2PnvfaDy3bUK143ueh51WPwP8A56WGf0VyGn8XvdLQQvvQuQGnFw0tswNnm9Bzb6XtdE3yy9ZyOXg5gY4UdF1D22I9q+9zju8guS6/6Ap292BA7ncufQE5JGgkLfZOCQAAAAlwSFlzAAAk6AAAJOgBgmMFHAAAAN1JREFUaAXt2UsOwyAMBNAQ9f43rqitggQVlG46HsnDJr8Fxg+coJRq7UraijW2od9sASHjYZyMhTEoJErra7tS0IvoETB4xi4rS/lKXbLGmcFSKQQyqDCgCGQA8dNoFIF8gESjCGQBEokikA1IFIpAvoB0FHuvwPIE6+gwbvbHT1SAAvkt07A8aad+AEHv4GHyh3FTPkZjeBIEspkKERgCIcMQyAIkamX0UFSyeibsGI3hoQikgTBgeCj67H2D+J/TRjMfDGq+8eer9CAsK6M7py5ZbBiOkhaEEcNBXgYbMEGkEjQnAAAAAElFTkSuQmCC" alt="">
+            <span>
+                CHARACTER
+            </span>
+        </div>
+        <hr>
+        <span>
+            OVERVIEW | STATS
+        </span>
+        <hr>
+        <img class="logo" src="https://i.imgur.com/Iv8DyDL.png" alt="">
+    </nav>
     <div class="content_wrap">
         <div class="left_panel">
+            <img class="faction" src="https://i.imgur.com/zqmZ90Q.png" alt="">
             <div class="class">
                 <% if (character[0].class === "Caster") { %>
                     <img src="https://i.imgur.com/CN23apZ.png" alt="">    
                     <span>
                         <%=character[0].class%>
+                    </span>
+                    <span>
+                        キャスター
                     </span>
 
                 <% } else if (character[0].class === "Specialist") { %>
@@ -23,17 +41,26 @@
                     <span>
                         <%=character[0].class%>
                     </span>
+                    <span>
+                        スペシャリスト
+                    </span>
                         
                 <% } else if (character[0].class === "Defender") { %>
                     <img src="https://i.imgur.com/FWg0GeF.png" alt="">   
                     <span>
                         <%=character[0].class%>
                     </span>
+                    <span>
+                        ディフェンダー
+                    </span>
                         
-                <% } else if (character[0].class === "Magic") { %>
+                <% } else if (character[0].class === "Medic") { %>
                     <img src="https://i.imgur.com/gCR0TVT.png" alt="">   
                     <span>
                         <%=character[0].class%>
+                    </span>
+                    <span>
+                        メディック
                     </span>
 
                 <% } else if (character[0].class === "Vanguard") { %>
@@ -41,17 +68,26 @@
                     <span>
                         <%=character[0].class%>
                     </span>
+                    <span>
+                        ヴァンガード
+                    </span>
 
                 <% } else if (character[0].class === "Guard") { %>
                     <img src="https://i.imgur.com/S8ocnVq.png" alt=""> 
                     <span>
                         <%=character[0].class%>
                     </span>
+                    <span>
+                        ガード
+                    </span>
 
                 <% } else if (character[0].class === "Supporter") { %>
                     <img src="https://i.imgur.com/Og3RKSc.png" alt="">               
                     <span>
                         <%=character[0].class%>
+                    </span>
+                    <span>
+                        サポーター
                     </span>
 
                 <% } else { %>

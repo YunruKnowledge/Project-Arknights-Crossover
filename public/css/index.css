@@ -10,7 +10,41 @@ body {
   color: white;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 1rem;
-  padding-top: 4rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1vw;
+  padding: 0 1vw;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+}
+nav > span {
+  display: flex;
+  align-items: center;
+}
+nav .current {
+  display: flex;
+  align-items: stretch;
+}
+nav .current span {
+  display: flex;
+  align-items: center;
+}
+nav .current img {
+  margin: auto;
+  height: 24px;
+}
+nav .logo {
+  height: 4rem;
+}
+nav hr {
+  margin: auto;
+  width: 20vw;
+  border: 0;
+  background-color: white;
+  height: 1px;
 }
 
 .content_wrap {
@@ -44,14 +78,16 @@ body {
 }
 
 .left_panel {
+  position: relative;
   transform: skewY(1deg);
 }
 .left_panel .class {
   display: flex;
+  align-items: stretch;
   width: max-content;
   background-color: black;
   border: 2px solid white;
-  align-items: center;
+  position: relative;
 }
 .left_panel .class img {
   width: 64px;
@@ -59,13 +95,33 @@ body {
   border-right: 2px solid white;
 }
 .left_panel .class span {
-  font-size: 36px;
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  letter-spacing: 0.1em;
   background-color: black;
   padding: 0 0.5em;
   padding-bottom: 0.15em;
   text-transform: uppercase;
+  border-right: 2px solid white;
+}
+.left_panel .class span:last-of-type {
+  background-color: white;
+  color: black;
+  height: auto;
+  border-right: 0;
+}
+.left_panel .faction {
+  border: 0;
+  width: 256px;
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  opacity: 0.25;
+  transform: translateY(-25%);
 }
 .left_panel .stars {
+  position: relative;
   display: flex;
 }
 .left_panel .stars span {
@@ -74,6 +130,7 @@ body {
   display: block;
 }
 .left_panel .desc, .left_panel .special {
+  position: relative;
   margin-top: 1.25em;
 }
 
