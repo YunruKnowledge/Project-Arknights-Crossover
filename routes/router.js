@@ -17,8 +17,7 @@ router.get("/character/:query", async (req,res)=>{
         "class": 1,
         "image": 1,
         "skill": 1,
-        "star": 1,
-        "icon": 1
+        "star": 1
     }
     const query = {
         "name": {
