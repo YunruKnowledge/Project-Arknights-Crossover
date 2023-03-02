@@ -1,11 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700&display=swap");
 * {
   padding: 0;
   margin: 0;
 }
 
 body {
-  background-image: url(/img/back_g.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/back_g.jpg);
   background-size: cover;
+  color: white;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+  padding-top: 4rem;
+}
+
+.content_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.character_display {
+  position: relative;
+}
+.character_display .character_image {
+  display: block;
+  width: 420px;
+  height: 640px;
+  object-fit: contain;
+  position: relative;
+}
+.character_display .character_banner {
+  position: absolute;
+  opacity: 0.33;
+  z-index: 0;
+  right: -15%;
+}
+
+.left_panel, .right_panel {
+  width: 30%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.left_panel {
+  transform: skewY(1deg);
+}
+.left_panel .class {
+  display: flex;
+  width: max-content;
+  background-color: black;
+  border: 2px solid white;
+  align-items: center;
+}
+.left_panel .class img {
+  width: 64px;
+  display: block;
+  border-right: 2px solid white;
+}
+.left_panel .class span {
+  font-size: 36px;
+  background-color: black;
+  padding: 0 0.5em;
+  padding-bottom: 0.15em;
+  text-transform: uppercase;
+}
+.left_panel .stars {
+  display: flex;
+}
+.left_panel .stars span {
+  font-size: 28px;
+  rotate: 15deg;
+  display: block;
+}
+.left_panel .desc, .left_panel .special {
+  margin-top: 1.25em;
+}
+
+.right_panel {
+  transform: skewY(-1deg);
+}
+.right_panel .name {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.right_panel .skills > div {
+  margin-top: 1.25em;
+}
+.right_panel .skills > div > div {
+  margin: 0.75em 0;
+  display: flex;
+  gap: 0.5em;
+}
+.right_panel .skills > div > div img {
+  display: block;
+}
+.right_panel .skills .active img {
+  width: 64px;
+  aspect-ratio: 1/1;
+}
+.right_panel .skills .passive img {
+  width: 48px;
+  aspect-ratio: 1/1;
 }
 
 /*# sourceMappingURL=index.css.map */

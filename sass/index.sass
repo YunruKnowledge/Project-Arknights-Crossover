@@ -2,10 +2,93 @@
 
 
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700&display=swap')
+// font-family: 'Noto Sans JP', sans-serif
 *
     padding: 0
     margin: 0
+    // outline: 1px solid red
 
 body
-    background-image: url(/img/back_g.jpg)
+    background-image: linear-gradient(rgba(#000, 0.5), rgba(#000, 0.5)), url(/img/back_g.jpg)
     background-size: cover
+    color: white
+    font-family: 'Noto Sans JP', sans-serif
+    font-size: 1rem
+    padding-top: 4rem
+
+.content_wrap
+    display: flex
+    justify-content: center
+    align-items: center
+
+.character_display
+    position: relative
+    .character_image
+        display: block
+        width: 420px
+        height: 640px
+        object-fit: contain
+        position: relative
+    .character_banner
+        position: absolute
+        opacity: 0.33
+        z-index: 0
+        right: -15%
+
+.left_panel, .right_panel
+    width: 30%            
+    position: relative
+    display: flex
+    flex-direction: column
+
+.left_panel
+    transform: skewY(1deg)
+    .class
+        display: flex
+        width: max-content
+        background-color: black
+        border: 2px solid white
+        align-items: center
+        img
+            width: 64px
+            display: block
+            border-right: 2px solid white
+        span
+            font-size: 36px
+            background-color: black
+            padding: 0 0.5em
+            padding-bottom: 0.15em
+            text-transform: uppercase
+    .stars
+        display: flex
+        span
+            font-size: 28px
+            rotate: 15deg
+            display: block
+    .desc, .special
+        margin-top: 1.25em
+        
+.right_panel
+    transform: skewY(-1deg)
+    .name
+        font-size: 2.5rem
+        font-weight: 700
+    .skills
+        >div
+            margin-top: 1.25em
+            >div
+                margin: 0.75em 0
+                display: flex
+                gap: 0.5em
+                img
+                    display: block
+        .active
+            img
+                width: 64px
+                aspect-ratio: 1/1
+        .passive
+            img 
+                width: 48px
+                aspect-ratio: 1/1
+    

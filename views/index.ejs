@@ -9,7 +9,149 @@
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-    <h1>TEST: <%=character[0].name%></h1>
-    <img src="data:image/png;base64,<%=character[0].icon%>" alt="">
+    <div class="content_wrap">
+        <div class="left_panel">
+            <div class="class">
+                <% if (character[0].class === "Caster") { %>
+                    <img src="https://i.imgur.com/CN23apZ.png" alt="">    
+                    <span>
+                        <%=character[0].class%>
+                    </span>
+
+                <% } else if (character[0].class === "Specialist") { %>
+                    <img src="https://i.imgur.com/CN23apZ.png" alt="">    
+                    <span>
+                        <%=character[0].class%>
+                    </span>
+                        
+                <% } else if (character[0].class === "Defender") { %>
+                    <img src="https://i.imgur.com/FWg0GeF.png" alt="">   
+                    <span>
+                        <%=character[0].class%>
+                    </span>
+                        
+                <% } else if (character[0].class === "Magic") { %>
+                    <img src="https://i.imgur.com/gCR0TVT.png" alt="">   
+                    <span>
+                        <%=character[0].class%>
+                    </span>
+
+                <% } else if (character[0].class === "Vanguard") { %>
+                    <img src="https://i.imgur.com/jeIqr6B.png" alt="">
+                    <span>
+                        <%=character[0].class%>
+                    </span>
+
+                <% } else if (character[0].class === "Guard") { %>
+                    <img src="https://i.imgur.com/S8ocnVq.png" alt=""> 
+                    <span>
+                        <%=character[0].class%>
+                    </span>
+
+                <% } else if (character[0].class === "Supporter") { %>
+                    <img src="https://i.imgur.com/Og3RKSc.png" alt="">               
+                    <span>
+                        <%=character[0].class%>
+                    </span>
+
+                <% } else { %>
+                    <span>
+                        <%=character[0].class%>
+                    </span>
+                <% } %>
+            </div>
+            <div class="stars">
+                <% if (character[0].star == 1) { %>
+                    <span>★</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+
+                <% } else if (character[0].star == 2) { %>
+                    <span>★</span><span>★</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+
+                <% } else if (character[0].star == 3) { %>
+                    <span>★</span><span>★</span><span>★</span><span>☆</span><span>☆</span><span>☆</span>
+
+                <% } else if (character[0].star == 4) { %>
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span><span>☆</span>
+
+                <% } else if (character[0].star == 5) { %>
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+
+                <% } else if (character[0].star == 6) { %>
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+
+                <% } else { %>
+                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                <% } %>
+            </div>
+            <div class="desc">
+                <p>
+                    <%=character[0].description%>
+                </p>
+            </div>
+            <div class="special">
+                <p>
+                    <%=character[0].speciality%>
+                </p>
+            </div>
+        </div>
+        <div class="character_display">
+            <img class="character_banner" src="/img/reimu_banner.webp" alt="" srcset="">
+            <img class="character_image" src="/img/reimu.webp" alt="" srcset="">
+        </div>
+        <div class="right_panel">
+            <div class="name">
+                <span>
+                    <%=character[0].name%>
+                </span>
+            </div>
+            <div class="skills">
+                <div class="active">
+                    <div>
+                        <img src="<%=character[0].skill.active['1'].img%>" alt="">
+                        <p>
+                            <%=character[0].skill.active['1'].desc%>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="<%=character[0].skill.active['2'].img%>" alt="">
+                        <p>
+                            <%=character[0].skill.active['2'].desc%>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="<%=character[0].skill.active['3'].img%>" alt="">
+                        <p>
+                            <%=character[0].skill.active['3'].desc%>
+                        </p>
+                    </div>
+                </div>
+                <div class="passive">
+                    <div>
+                        <img src="<%=character[0].skill.passive['1'].img%>" alt="">
+                        <p>
+                            <%=character[0].skill.passive['1'].desc%>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="<%=character[0].skill.passive['2'].img%>" alt="">
+                        <p>
+                            <%=character[0].skill.passive['2'].desc%>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="<%=character[0].skill.passive['3'].img%>" alt="">
+                        <p>
+                            <%=character[0].skill.passive['3'].desc%>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- remember to seperate icons into different POST -->
+    <img src="<%=character[0].image.icon%>" alt="">
+    <!-- <img src="data:image/png;base64,<%=character[0].image.icon%>" alt=""> -->
 </body>
 </html>
