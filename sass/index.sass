@@ -17,6 +17,10 @@ body
     font-size: 1rem
     overflow-x: hidden
 
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+
 nav
     display: flex
     justify-content: space-between
@@ -178,4 +182,32 @@ nav
         transition: 200ms
         img
             display: block
+
+footer
+    width: 100%
+    height: max-content
+    display: flex
+    margin-top: auto
+    padding: 0 1vw
+    box-sizing: border-box
+    div
+        margin: 0 auto
+        span
+            display: block
+            text-align: center
+            a
+                color: inherit
+    hr
+        border: 0
+        width: 20vw
+        height: 1px
+        background-color: white
+        margin: auto 0
+        opacity: 0.5
+    img 
+        margin: auto 0 
+        height: 18px
+        &:last-of-type
+            transform: scaleX(-100%)
+    
 
