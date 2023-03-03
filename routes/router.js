@@ -30,7 +30,7 @@ router.get("/character/:query", async (req,res)=>{
     try {
         // console.log(wano)
         res.render('index', {
-          fav: await fetchData("other", null, {"favicon": 1}, 1),
+          fav: await fetchData("other", {"_id": {"$oid": "63ff4b0b973764e06c435c81"}}, {"favicon": 1}, 1),
           btn: await fetchData("other", {"_id": {"$oid": "6401d35168dff4e1b30e0bfd"}}, {"button": 1}, 1),
           character: await fetchData("character", query, lookUp, 1),
           icon: await fetchData("character", null, {"image": 1, "name": 1})
@@ -64,8 +64,8 @@ async function fetchData(collection, query, lookFor, limit = null) {
 
     const response = await axios(config);
     const serverData = response.data.documents;
-    console.log("Search query - found: " + serverData.length + ` (Limited to ${limit})`)
-    console.log(serverData)
+    console.log(`Collection: ${collection} | METHOD: ${config.method} | Objects found: ${serverData.length} | Limit: ${limit} | Projections: ${JSON.stringify(lookFor)} | Query: ${JSON.stringify(query)}`)
+    // console.log(serverData)
 
     const notFound = [{
         "name": null,
