@@ -7,6 +7,7 @@
     <title>Arknights Crossover | Stats</title>
     <link rel="shortcut icon" href="<%=fav[0].favicon%>" type="image/x-icon">
     <link rel="stylesheet" href="/css/index.css">
+    <script defer src="/js/main.js"></script>
 </head>
 <body>
     <nav>
@@ -199,7 +200,7 @@
         </div>
     <% } else { %>
         <div class="gallery">
-            <button type="button" onclick="gallerySlide(-1)">
+            <button id="backward" type="button" onclick="gallerySlide(-1)">
                 <img src="<%=btn[0].button.back%>" alt="">
             </button>
 
@@ -211,25 +212,10 @@
                 <% }); %>
             </div>
 
-            <button type="button" onclick="gallerySlide(1)">
+            <button id="forward" type="button" onclick="gallerySlide(1)">
                 <img src="<%=btn[0].button.next%>" alt="">
             </button>
         </div>
-        <script defer>
-            function gallerySlide(value) {
-                console.log(value);
-            }
-
-            const container = document.getElementById("gallery_icon");
-            const maxScroll = container.children.length
-
-
-            const maxWidth = container.children[0].clientWidth * 4;
-            container.style.width = maxWidth +"px";
-            container.style.overflow = "hidden"
-            console.log(maxScroll)
-
-        </script>
     <% }; %>
 </body>
 </html>

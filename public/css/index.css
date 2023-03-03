@@ -185,6 +185,7 @@ nav hr {
 }
 .gallery > div {
   display: flex;
+  gap: 0.5vw;
 }
 .gallery > div img {
   width: 128px;
@@ -195,9 +196,14 @@ nav hr {
   height: max-content;
   margin: auto 0;
   padding: 0.5em;
+  transition: 200ms;
 }
 .gallery button img {
   display: block;
+  pointer-events: none;
+}
+.gallery a {
+  transition: 200ms;
 }
 .gallery a img {
   display: block;
