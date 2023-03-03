@@ -30,8 +30,10 @@ router.get("/character/:query", async (req,res)=>{
     try {
         // console.log(wano)
         res.render('index', {
-          fav: await fetchData("other", null, {"favicon": 1}),
-          character: await fetchData("character", query, lookUp)
+          fav: await fetchData("other", null, {"favicon": 1}, 1),
+          btn: await fetchData("other", {"_id": {"$oid": "6401d35168dff4e1b30e0bfd"}}, {"button": 1}, 1),
+          character: await fetchData("character", query, lookUp, 1),
+          icon: await fetchData("character", null, {"image": 1, "name": 1})
         });
     } 
     catch (error) {
@@ -40,7 +42,7 @@ router.get("/character/:query", async (req,res)=>{
     }
 })
 
-async function fetchData(collection, query, lookFor) {
+async function fetchData(collection, query, lookFor, limit = null) {
     
     const config = {
         method: 'post',
@@ -56,13 +58,14 @@ async function fetchData(collection, query, lookFor) {
             "dataSource": "API-Cluster",
             "projection": lookFor,
             "filter": query,
-            "limit": 4
+            "limit": limit
         }
     };
 
     const response = await axios(config);
     const serverData = response.data.documents;
-    console.log("Search query - found: " + serverData.length)
+    console.log("Search query - found: " + serverData.length + ` (Limited to ${limit})`)
+    console.log(serverData)
 
     const notFound = [{
         "name": null,

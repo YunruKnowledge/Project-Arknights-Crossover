@@ -25,7 +25,7 @@
     </nav>
     <div class="content_wrap">
         <div class="left_panel">
-            <img class="faction" src="https://i.imgur.com/zqmZ90Q.png" alt="">
+            <img class="faction" src="<%=character[0].image.factionImage%>" alt="">
             <div class="class">
                 <% if (character[0].class === "Caster") { %>
                     <img src="https://i.imgur.com/CN23apZ.png" alt="">    
@@ -94,7 +94,7 @@
                     <span>
                         <%=character[0].class%>
                     </span>
-                <% } %>
+                <% }; %>
             </div>
             <div class="stars">
                 <% if (character[0].star == 1) { %>
@@ -117,7 +117,7 @@
 
                 <% } else { %>
                     <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                <% } %>
+                <% }; %>
             </div>
             <div class="desc">
                 <p>
@@ -131,14 +131,18 @@
             </div>
         </div>
         <div class="character_display">
-            <img class="character_banner" src="/img/reimu_banner.webp" alt="" srcset="">
-            <img class="character_image" src="/img/reimu.webp" alt="" srcset="">
+            <img class="character_banner" src="<%=character[0].image.bannerImage%>" alt="" srcset="">
+            <img class="character_image" src="<%=character[0].image.characterImage%>" alt="" srcset="">
         </div>
         <div class="right_panel">
             <div class="name">
-                <span>
-                    <%=character[0].name%>
-                </span>
+                <% if (!!character[0].image.nameImage) { %>
+                    <img src="<%=character[0].image.nameImage%>" alt="">
+                <% } else { %>
+                    <span>
+                        <%=character[0].name%>
+                    </span>
+                <% }; %>
             </div>
             <div class="skills">
                 <div class="active">
@@ -185,9 +189,47 @@
         </div>
     </div>
     
+    <% if (icon.length <= 4) { %>
+        <div class="gallery">
+            <% icon.forEach(function(object) { %>
+                <a href="/character/<%=object.name%>">
+                    <img src="<%=object.image.icon%>" alt="">
+                </a>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <div class="gallery">
+            <button type="button" onclick="gallerySlide(-1)">
+                <img src="<%=btn[0].button.back%>" alt="">
+            </button>
 
-    <!-- remember to seperate icons into different POST -->
-    <img src="<%=character[0].image.icon%>" alt="">
-    <!-- <img src="data:image/png;base64,<%=character[0].image.icon%>" alt=""> -->
+            <div id="gallery_icon">
+                <% icon.forEach(function(object) { %>
+                    <a href="/character/<%=object.name%>">
+                        <img src="<%=object.image.icon%>" alt="">
+                    </a>
+                <% }); %>
+            </div>
+
+            <button type="button" onclick="gallerySlide(1)">
+                <img src="<%=btn[0].button.next%>" alt="">
+            </button>
+        </div>
+        <script defer>
+            function gallerySlide(value) {
+                console.log(value);
+            }
+
+            const container = document.getElementById("gallery_icon");
+            const maxScroll = container.children.length
+
+
+            const maxWidth = container.children[0].clientWidth * 4;
+            container.style.width = maxWidth +"px";
+            container.style.overflow = "hidden"
+            console.log(maxScroll)
+
+        </script>
+    <% }; %>
 </body>
 </html>

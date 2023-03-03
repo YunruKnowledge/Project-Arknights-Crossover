@@ -7,7 +7,7 @@
 *
     padding: 0
     margin: 0
-    // outline: 1px solid red
+    outline: 1px solid red
 
 body
     background-image: linear-gradient(rgba(#000, 0.5), rgba(#000, 0.5)), url(/img/back_g.jpg)
@@ -15,12 +15,15 @@ body
     color: white
     font-family: 'Noto Sans JP', sans-serif
     font-size: 1rem
+    overflow-x: hidden
 
 nav
     display: flex
     justify-content: space-between
     margin-top: 1vw
     padding: 0 1vw
+    position: relative 
+    z-index: 3
 
     font-size: 24px
     letter-spacing: 0.1em
@@ -44,6 +47,7 @@ nav
         border: 0
         background-color: white
         height: 1px
+        opacity: 0.5
 
 .content_wrap
     display: flex
@@ -63,6 +67,7 @@ nav
         opacity: 0.33
         z-index: 0
         right: -15%
+        transform: translateY(-5%)
 
 .left_panel, .right_panel
     width: 30%            
@@ -123,6 +128,13 @@ nav
     .name
         font-size: 2.5rem
         font-weight: 700
+        &:has(img)
+            height: 64px
+            img
+                height: 64px
+                display: block
+                position: absolute
+                transform: translateX(-15%)
     .skills
         >div
             margin-top: 1.25em
@@ -141,3 +153,27 @@ nav
                 width: 48px
                 aspect-ratio: 1/1
     
+.gallery
+    display: flex
+    gap: 1vw
+    justify-content: center
+    position: relative
+    z-index: 2
+    >div
+        display: flex
+        img
+            width: 128px
+    button
+        background-color: transparent
+        border: 0
+        height: max-content
+        margin: auto 0
+        padding: 0.5em
+        img 
+            display: block
+    a
+        img
+            display: block
+
+.gallery_limit
+

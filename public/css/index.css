@@ -2,6 +2,7 @@
 * {
   padding: 0;
   margin: 0;
+  outline: 1px solid red;
 }
 
 body {
@@ -10,6 +11,7 @@ body {
   color: white;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 1rem;
+  overflow-x: hidden;
 }
 
 nav {
@@ -17,6 +19,8 @@ nav {
   justify-content: space-between;
   margin-top: 1vw;
   padding: 0 1vw;
+  position: relative;
+  z-index: 3;
   font-size: 24px;
   letter-spacing: 0.1em;
 }
@@ -45,6 +49,7 @@ nav hr {
   border: 0;
   background-color: white;
   height: 1px;
+  opacity: 0.5;
 }
 
 .content_wrap {
@@ -68,6 +73,7 @@ nav hr {
   opacity: 0.33;
   z-index: 0;
   right: -15%;
+  transform: translateY(-5%);
 }
 
 .left_panel, .right_panel {
@@ -141,6 +147,15 @@ nav hr {
   font-size: 2.5rem;
   font-weight: 700;
 }
+.right_panel .name:has(img) {
+  height: 64px;
+}
+.right_panel .name:has(img) img {
+  height: 64px;
+  display: block;
+  position: absolute;
+  transform: translateX(-15%);
+}
 .right_panel .skills > div {
   margin-top: 1.25em;
 }
@@ -159,6 +174,33 @@ nav hr {
 .right_panel .skills .passive img {
   width: 48px;
   aspect-ratio: 1/1;
+}
+
+.gallery {
+  display: flex;
+  gap: 1vw;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.gallery > div {
+  display: flex;
+}
+.gallery > div img {
+  width: 128px;
+}
+.gallery button {
+  background-color: transparent;
+  border: 0;
+  height: max-content;
+  margin: auto 0;
+  padding: 0.5em;
+}
+.gallery button img {
+  display: block;
+}
+.gallery a img {
+  display: block;
 }
 
 /*# sourceMappingURL=index.css.map */
