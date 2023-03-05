@@ -64,6 +64,7 @@ function btnAvailabilityUpdate(sildeDirection) {
         if (element.tagName != "BUTTON") return
 
         if (element.getAttribute("id") === "forward") {
+            // If said button is not usable.
             if (sildeDirection == 1 && gallerySlideValues[2].forward < gallerySlideValues[0].max) {
                 element.style.opacity = "0.33"
                 element.style.cursor = "default"
@@ -101,3 +102,4 @@ window.addEventListener("load", event => {
 
     btnAvailabilityUpdate(-1)
 });
+

@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="<%=fav[0].favicon%>" type="image/x-icon">
     <link rel="stylesheet" href="/css/index.css">
     <script defer src="/js/main.js"></script>
+    <script defer src="/js/parallax.js"></script>
 </head>
 <body>
     <nav>
@@ -25,7 +26,7 @@
         <img class="logo" src="https://i.imgur.com/Iv8DyDL.png" alt="">
     </nav>
     <div class="content_wrap">
-        <div class="left_panel">
+        <div class="left_panel" id="left_panel">
             <img class="faction" src="<%=character[0].image.factionImage%>" alt="">
             <div class="class">
                 <% if (character[0].class === "Caster") { %>
@@ -135,7 +136,7 @@
             <img class="character_banner" src="<%=character[0].image.bannerImage%>" alt="" srcset="">
             <img class="character_image" src="<%=character[0].image.characterImage%>" alt="" srcset="">
         </div>
-        <div class="right_panel">
+        <div class="right_panel" id="right_panel">
             <div class="name">
                 <% if (!!character[0].image.nameImage) { %>
                     <img src="<%=character[0].image.nameImage%>" alt="">

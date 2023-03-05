@@ -84,6 +84,7 @@ nav hr {
   position: relative;
   display: flex;
   flex-direction: column;
+  transition: 20ms 5ms;
 }
 
 .left_panel {
