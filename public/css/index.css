@@ -55,6 +55,47 @@ nav .current img {
   margin: auto;
   height: 24px;
 }
+nav .current:hover > .nav_fold {
+  height: 11.8rem;
+}
+nav .current:hover > .nav_fold > div {
+  opacity: 1;
+}
+nav .current .nav_fold {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  transform: translateY(100%);
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(2px);
+  padding: 0.15em 0.15em 0.15em 0;
+  transition: 200ms;
+  min-width: 257px;
+  height: 0;
+  overflow: hidden;
+}
+nav .current .nav_fold div {
+  width: max-content;
+  display: flex;
+  padding: 0.25em 0;
+  transition: 200ms 200ms;
+  opacity: 0;
+}
+nav .current .nav_fold div:hover > a {
+  transform: translateX(0%);
+}
+nav .current .nav_fold div a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  transition: 80ms;
+  transform: translateX(-4px);
+}
+nav .current .nav_fold div img {
+  margin: auto;
+  height: 16px;
+}
 nav .logo {
   height: 4rem;
 }
