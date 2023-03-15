@@ -290,6 +290,8 @@ nav hr {
 }
 .gallery > div img {
   width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 .gallery button {
   background-color: transparent;
