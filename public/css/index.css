@@ -194,8 +194,8 @@ nav hr {
   position: absolute;
   z-index: 0;
   right: 0;
+  top: -64px;
   opacity: 0.25;
-  transform: translateY(-25%);
 }
 .left_panel .stars {
   position: relative;
@@ -219,7 +219,7 @@ nav hr {
   font-weight: 700;
 }
 .right_panel .name span {
-  padding: 0.15em 0.5em;
+  padding: 0 0.5em 0.15em 0.5em;
   display: block;
   position: relative;
   width: max-content;
