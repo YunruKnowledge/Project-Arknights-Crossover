@@ -10,6 +10,7 @@
     <script defer src="/js/main.js"></script>
     <script defer src="/js/parallax.js"></script>
     <script defer src="/js/skillSelector.js"></script>
+    <script defer src="/js/initialAnimations.js"></script>
 </head>
 <body>
     <div class="background">
@@ -175,7 +176,7 @@
             <img class="character_image" src="<%=character[0].image.characterImage%>" alt="" srcset="">
         </div>
         <div class="right_panel" id="right_panel">
-            <div class="name">
+            <div class="name" id="characterName">
                 <% if (!!character[0].image.nameImage) { %>
                     <img src="<%=character[0].image.nameImage%>" alt="">
                 <% } else { %>

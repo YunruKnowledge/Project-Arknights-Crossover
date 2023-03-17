@@ -218,6 +218,37 @@ nav hr {
   font-size: 2.5rem;
   font-weight: 700;
 }
+.right_panel .name span {
+  padding: 0.15em 0.5em;
+  display: block;
+  position: relative;
+  width: max-content;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.right_panel .name span::before {
+  content: "";
+  width: 75%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: -8px;
+  transform: translateY(-8px);
+  opacity: 0.5;
+  animation: var(--nameAniSet, );
+}
+.right_panel .name span::after {
+  content: "";
+  width: 75%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  right: -8px;
+  transform: translateY(8px);
+  opacity: 0.5;
+  animation: var(--nameAniSet, );
+}
 .right_panel .name:has(img) {
   height: 64px;
 }
@@ -270,6 +301,14 @@ nav hr {
   height: 48px;
 }
 
+@keyframes name_line_ani {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 75%;
+  }
+}
 .gallery {
   display: flex;
   gap: 1vw;

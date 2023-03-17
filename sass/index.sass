@@ -195,6 +195,34 @@ nav
     .name
         font-size: 2.5rem
         font-weight: 700
+        span
+            padding: 0.15em 0.5em 
+            display: block
+            position: relative
+            width: max-content
+            background-color: rgba(#fff , 0.15)
+            &::before
+                content: ""
+                width: 75%
+                height: 2px
+                background-color: white
+                position: absolute
+                top: 0
+                left: -8px
+                transform: translateY(-8px)
+                opacity: 0.5
+                animation: var(--nameAniSet,)
+            &::after
+                content: ""
+                width: 75%
+                height: 2px
+                background-color: white
+                position: absolute
+                bottom: 0
+                right: -8px
+                transform: translateY(8px)
+                opacity: 0.5
+                animation: var(--nameAniSet,)
         &:has(img)
             height: 64px
             img
@@ -239,6 +267,12 @@ nav
                 width: 48px
                 height: 48px
     
+@keyframes name_line_ani
+    0%
+        width: 0%
+    100%
+        width: 75%
+
 .gallery
     display: flex
     gap: 1vw
