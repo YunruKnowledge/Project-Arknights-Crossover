@@ -57,8 +57,8 @@
     </nav>
     <div class="content_wrap">
         <div class="left_panel" id="left_panel">
-            <img class="faction" src="<%=character[0].image.factionImage%>" alt="">
-            <div class="class">
+            <img class="faction" parallaxOffset="0.5" src="<%=character[0].image.factionImage%>" alt="">
+            <div class="class" parallaxOffset="1.5">
                 <% if (character[0].class === "Caster") { %>
                     <img src="https://i.imgur.com/CN23apZ.png" alt="">    
                     <span>
@@ -137,7 +137,7 @@
                     </span>
                 <% }; %>
             </div>
-            <div class="stars">
+            <div class="stars" parallaxOffset="1.25">
                 <% if (character[0].star == 1) { %>
                     <span>★</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 
@@ -176,7 +176,7 @@
             <img class="character_image" src="<%=character[0].image.characterImage%>" alt="" srcset="">
         </div>
         <div class="right_panel" id="right_panel">
-            <div class="name" id="characterName">
+            <div class="name" parallaxOffset="1.5" id="characterName">
                 <% if (!!character[0].image.nameImage) { %>
                     <img src="<%=character[0].image.nameImage%>" alt="">
                 <% } else { %>
