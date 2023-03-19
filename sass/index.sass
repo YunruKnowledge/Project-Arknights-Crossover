@@ -290,10 +290,45 @@ nav
     >div
         display: flex
         gap: 0.5vw
-        img
-            width: 100px
-            height: 100px
-            object-fit: cover
+        a
+            transition: 200ms
+            img
+                display: block
+                width: 100px
+                height: 100px
+                object-fit: cover
+                transition: 200ms
+            &:not(.gallery_active)
+                img
+                    filter: saturate(0.5)
+            &:hover:not(.gallery_active)
+                img
+                    filter: saturate(1)
+        .gallery_active
+            position: relative
+            &:hover 
+                &::before
+                    transform: translateX(33%)
+                &::after
+                    transform: translateX(-33%)
+            &::before
+                content: ""
+                position: absolute
+                width: 75%
+                height: 2px
+                background-color: white
+                top: 0
+                left: 0
+                transition: 200ms ease-in-out
+            &::after
+                content: ""
+                position: absolute
+                width: 75%
+                height: 2px
+                background-color: white
+                bottom: 0
+                right: 0
+                transition: 200ms ease-in-out
     button
         background-color: transparent
         border: 0
@@ -313,10 +348,6 @@ nav
     #backward
         &:hover > img
             transform: translateX(-2%)
-    a
-        transition: 200ms
-        img
-            display: block
 
 footer
     position: relative

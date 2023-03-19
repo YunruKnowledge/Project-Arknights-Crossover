@@ -327,10 +327,50 @@ nav hr {
   display: flex;
   gap: 0.5vw;
 }
-.gallery > div img {
+.gallery > div a {
+  transition: 200ms;
+}
+.gallery > div a img {
+  display: block;
   width: 100px;
   height: 100px;
   object-fit: cover;
+  transition: 200ms;
+}
+.gallery > div a:not(.gallery_active) img {
+  filter: saturate(0.5);
+}
+.gallery > div a:hover:not(.gallery_active) img {
+  filter: saturate(1);
+}
+.gallery > div .gallery_active {
+  position: relative;
+}
+.gallery > div .gallery_active:hover::before {
+  transform: translateX(33%);
+}
+.gallery > div .gallery_active:hover::after {
+  transform: translateX(-33%);
+}
+.gallery > div .gallery_active::before {
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 2px;
+  background-color: white;
+  top: 0;
+  left: 0;
+  transition: 200ms ease-in-out;
+}
+.gallery > div .gallery_active::after {
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  right: 0;
+  transition: 200ms ease-in-out;
 }
 .gallery button {
   background-color: transparent;
@@ -353,12 +393,6 @@ nav hr {
 }
 .gallery #backward:hover > img {
   transform: translateX(-2%);
-}
-.gallery a {
-  transition: 200ms;
-}
-.gallery a img {
-  display: block;
 }
 
 footer {
