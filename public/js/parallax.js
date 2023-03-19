@@ -36,9 +36,9 @@ function parallax(event) {
     const bothPanels = [].concat(Array.prototype.slice.call(leftPanel.children), Array.prototype.slice.call(rightPanel.children));
     bothPanels.forEach(element=> {
         if (!element.getAttribute("parallaxOffset")) return
-        console.log(element)
+        // console.log(element)
         const offset = element.getAttribute("parallaxOffset") - 1 
-        console.log(offset);
+        // console.log(offset);
         element.style.transform = `translate(${leftTranslatePosX*offset}px, ${translatePosY*offset}px) rotateY(${leftTranslatePosX*0.75*offset}deg) rotateX(${translatePosY*1.5*(-1)*offset}deg)`
     })
     

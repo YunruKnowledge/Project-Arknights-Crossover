@@ -291,21 +291,35 @@ nav
         display: flex
         gap: 0.5vw
         a
+            position: relative
             transition: 200ms
             img
                 display: block
                 width: 100px
                 height: 100px
                 object-fit: cover
-                transition: 200ms
+                transition: 120ms 120ms
             &:not(.gallery_active)
                 img
-                    filter: saturate(0.5)
-            &:hover:not(.gallery_active)
-                img
-                    filter: saturate(1)
+                    filter: saturate(0.33)
+                &::after
+                    content: ""
+                    position: absolute
+                    top: 0
+                    width: 100%
+                    height: 100%
+                    background-image: linear-gradient(110deg, rgba(#000,0) 0%, rgba(#000,0) 60%, rgba(#fff,1) 60%, rgba(#fff,1) 65%, rgba(#000,0) 65%, rgba(#000,0) 100%)
+                    background-size: 200%
+                    background-position-x: 0%
+                    transition: 500ms
+                    opacity: 0.85
+                &:hover
+                    img
+                        filter: saturate(1)
+                    &::after
+                        background-position-x: 175%
+                    
         .gallery_active
-            position: relative
             &:hover 
                 &::before
                     transform: translateX(33%)
@@ -315,7 +329,7 @@ nav
                 content: ""
                 position: absolute
                 width: 75%
-                height: 2px
+                height: 4px
                 background-color: white
                 top: 0
                 left: 0
@@ -324,7 +338,7 @@ nav
                 content: ""
                 position: absolute
                 width: 75%
-                height: 2px
+                height: 4px
                 background-color: white
                 bottom: 0
                 right: 0

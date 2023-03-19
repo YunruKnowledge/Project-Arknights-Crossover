@@ -30,17 +30,27 @@ function moveSkillSelector(mouseEvent, element) {
 function InitCharacterIconSelector() {
     const urlPathSections = window.location.pathname.split("/")
     const urlPathTarget = urlPathSections[urlPathSections.length-1]
-    console.log(urlPathTarget);
+    // console.log(urlPathTarget);
 
     const elements = document.getElementById("gallery_icon").children
-    Array.from(elements).forEach(icon=>{
-        const anchorPathSections = icon.href.split("/")
+    Array.from(elements).forEach((anchor,index)=>{
+        const anchorPathSections = anchor.href.split("/")
         const anchorPathTarget = anchorPathSections[anchorPathSections.length-1]
-        console.log(anchorPathTarget);
-
+        // console.log(anchorPathTarget);
+        
+        // console.log(anchor, index);
         if (anchorPathTarget === urlPathTarget) {
-            icon.classList.add("gallery_active")
+            anchor.classList.add("gallery_active")
+            for (let i = 0; i <= index; i++) {
+                if (i > 0 ) {
+                    setTimeout(() => {
+                        gallerySlide(1)
+                        // console.log(i, index);
+                    }, i*400);
+                }
+            }
         }
         else return
     })
+    
 }
