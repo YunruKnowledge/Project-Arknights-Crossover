@@ -40,7 +40,7 @@ router.get("/character/:query", async (req,res)=>{
         console.error(error);
         res.render('error');
     }
-})
+});
 
 async function fetchData(collection, query, lookFor, limit = null) {
     
@@ -79,6 +79,16 @@ async function fetchData(collection, query, lookFor, limit = null) {
     }]
     if (serverData.length <= 0) return notFound
     return serverData
-} 
+};
+
+router.get("*", (req,res)=>{
+    try {
+        res.render("error")
+    }
+    catch {
+        res.render("error")
+    }
+});
+
 
 module.exports = router;
