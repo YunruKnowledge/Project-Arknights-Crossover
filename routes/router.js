@@ -85,9 +85,12 @@ router.get("/character/:query", async (req,res)=>{
     }
 });
 
-router.get("*", (req,res)=>{
+router.get("/:url404", async (req,res)=>{
     try {
-        res.render("404error")
+        res.render("404error", {
+            fav: await fetchData("other", {"_id": {"$oid": "63ff4b0b973764e06c435c81"}}, {"favicon": 1}, 1),
+            url: req.params.url404
+        })
     }
     catch {
         res.render("error")

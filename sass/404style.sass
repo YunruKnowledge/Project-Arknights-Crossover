@@ -1,0 +1,81 @@
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700&display=swap')
+// font-family: 'Noto Sans JP', sans-serif
+*
+    padding: 0
+    margin: 0
+
+body
+    font-family: 'Noto Sans JP', sans-serif
+    min-height: 100vh
+    min-width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABbWlDQ1BpY2MAACiRdZG9S0JRGMZ/amGU4VBDRIODRYNSFERjGORiDWqQ1aLXr8Crl3uVkNagpUFoiFr6GvoPag1aC4KgCCLa2vtaIm7v0cAIPZdz3x/POc/Le58LzkhB062OGdCLZTMaDvmWEss+9wsuOvEwhiupWcZ8bC5O2/V5h0PV26Dq1f5ey9WTzlgaOLqEpzTDLAvLNETWy4bibeF+LZ9MCx8KB0wZUPhK6akGPyvONfhdsRmPzoJT9fTl/nDqD2t5UxceFfbrhYr2O4/6Ek+muBiTOih7CIsoYUL4SFFhjQJlglKLkllr33jdt0BJPJq8DaqY4siRF29A1Ip0zUjNip6Rp0BV5f4/Tys7OdHo7glB55Ntvw2Dewe+a7b9dWTb38fgeoSLYtNfkpymP0SvNTX/AXg34eyyqaV24XwLBh6MpJmsSy7ZzmwWXk+hNwF9N9C90sjq95yTe4hvyC+6hr19GJH73tUf5vln/umyHtkAAAAJcEhZcwAAD2EAAA9hAag/p2kAAABwSURBVDgRY2AgAP7//+8MwgSUDQLpwe3Kwe06UPTRJKYHzNuMuFIkzEWMjIx7gez9UHUtIBokhksfEy4JoDhYE8xgkDqYQchiePTTSQroGnAsE2sdPi+DzQB6E0wPLm+ie29wuw7mWpArB69LSXEZALw4PkOHL06EAAAAAElFTkSuQmCC")
+    background-blend-mode: soft-light
+    animation: bgRoll 60s infinite linear 
+
+@keyframes bgRoll
+    0%
+        background-position-y: 0% 
+        
+    100%
+        background-position-y: -100%
+
+span
+    display: block
+    text-align: center
+    &:last-of-type
+        margin-bottom: 3em
+
+.header 
+    font-size: 4rem
+    font-weight: 700
+    >span
+        display: inline-block
+        transform: rotate(-6deg)
+        margin: 0
+        -webkit-user-select: none
+        user-select: none
+    &::after
+        content: "_"
+        font-weight: 900
+        display: inline
+        position: absolute
+        animation: blink 1.75s infinite linear
+
+@keyframes blink
+    0%
+        opacity: 0
+    50%
+        opacity: 0
+    50.01%
+        opacity: 1
+    100%
+        opacity: 1
+
+.sub 
+    font-size: 1.25rem
+    margin-bottom: 0.25em
+
+a
+    color: #a9d8ff
+    text-decoration: none
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        bottom: -2px
+        width: 0
+        height: 2px
+        background-color: rgb(219, 225, 250)
+        transition: 200ms
+    &:hover
+        &::before
+            width: 100%
+        
+        

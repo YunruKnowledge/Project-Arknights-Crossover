@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arknights Crossver | 404</title>
+    <link rel="shortcut icon" href="<%=fav[0].favicon%>" type="image/x-icon">
+    <link rel="stylesheet" href="/css/404style.css">
+    <style>
+        body {
+            background-color: #1f262e;
+            color: rgb(219, 225, 250);
+        }
+    </style>
+</head>
+<body>
+    <span class="header">
+        <span id="rotate" onclick="rotate(rotateTarget, 80)">404</span> Page Not Found
+    </span>
+    <script>
+        const rotateTarget = document.getElementById("rotate");
+        function rotate(element, transition = 0) {
+            element.style.transition = `${transition}ms`
+            element.style.transform = `rotate(${Math.floor(Math.random() * (6 +(1) - (-6)) + (-6))}deg)`    
+        }
+        rotate(rotateTarget)
+    </script>
+    <span class="sub">
+        Did not find path at: /<%=url%>
+    </span>
+    <span>
+        Site under development, perhaps this route: <a href="/character/Reimu Hakurei">/character/Reimu Hakurei</a>
+    </span>
+</body>
+</html>
