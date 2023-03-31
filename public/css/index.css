@@ -10,10 +10,10 @@
 
 @keyframes loadSpin {
   0% {
-    transform: rotate(0deg) scaleX(-1);
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg) scaleX(-1);
+    transform: rotate(360deg);
   }
 }
 body {
