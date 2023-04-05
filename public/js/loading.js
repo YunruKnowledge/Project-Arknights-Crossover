@@ -18,6 +18,7 @@ loadingIcon.style.top = "50%"
 loadingIcon.style.left = "50%"
 loadingIcon.style.translate = "-50% -50%"
 loadingIcon.style.opacity = "0"
+loadingIcon.style.display = "none"
 loadingIcon.style.transition = "80ms"
 
 const content = document.querySelectorAll("[loadHide]")
@@ -25,7 +26,7 @@ content.forEach(e=>{
     e.style.opacity = "0"
     e.style.transform = "translateY(64px)"
     // e.style.transition = "200ms"
-
+    
     const body = document.querySelector("body")
     body.insertBefore(loadingIcon, body.children[2]);
     console.log(body.children[2])
@@ -52,6 +53,7 @@ const beforeUnload = (event) => {
             e.remove()
         }, 200);
     })
+    loadingIcon.style.display = "block"
     loadingIcon.style.opacity = "1"
 };  
 window.addEventListener("beforeunload", beforeUnload);
